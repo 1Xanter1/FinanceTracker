@@ -10,7 +10,6 @@ public class Transaction {
         EXPENSE
     }
 
-
     @Id
     @Column(name = "transaction_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

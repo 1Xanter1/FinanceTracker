@@ -1,4 +1,4 @@
-create table user(
+create table users(
     user_id serial8 primary key not null,
     username varchar not null,
     password varchar not null,
@@ -8,15 +8,15 @@ create table user(
 create table category(
     category_id serial8 primary key not null,
     category_name varchar not null,
-    category_type varchar check (type in ('income', 'expense')),
-    user_id int references user(user_id)
+    category_type varchar check (category_type in ('income', 'expense')),
+    user_id int references users(user_id)
 );
 create table transactions(
     transaction_id serial8 primary key not null,
     amount float not null,
     description varchar,
-    transaction_type varchar check (('income', 'expense') ),
-    user_id int references user(user_id),
+    transaction_type varchar check (transaction_type in ('income', 'expense')),
+    user_id int references users(user_id),
     category_id int references category(category_id)
 );
 create table goal(
@@ -25,5 +25,5 @@ create table goal(
     target_amount float not null,
     current_amount float,
     deadline date,
-    user_id int references user(user_id)
+    user_id int references users(user_id)
 );

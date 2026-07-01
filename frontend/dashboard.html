@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>FinanceTracker</title>
 </head>
+
 <body>
     <header>
         <div class="header_title">
@@ -29,5 +30,53 @@
             <a href="goal.html">Goals</a>
         </div>
     </nav>
+    
+    <div class="main">
+        <div class="bars" id="first">
+            <div class="income">
+                <h2>Income:</h2>
+                <p id="income_num">0$</p>
+            </div>
+            <div class="expenses">
+                <h2>Expenses:</h2>
+                <p id="expenses_num">0$</p>
+            </div>
+            <div class="balance">
+                <h2>Balance:</h2>
+                <p id="balance_num">0$</p>
+            </div>
+        </div>
+        <div class="secondaries">
+            <div class="bars" id="second">
+                <div class="expense_categories">
+                    <h2>Expense Categories</h2>
+                    <canvas id="expense_chart">
+                        
+                    </canvas>
+                </div>
+                <div class="monthly_spending">
+                    <h2>Monthly Spending</h2>
+                    <canvas id = "spending_chart">
+
+                    </canvas>
+                </div>
+            </div>
+        </div>
+        <div class="transaction_box">
+            <div class="transaction_parent">
+                <div class="transaction_top">
+                    <h2>Recent transactions</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="transaction_bottom">
+                    <span class="transaction_name"></span>
+                    <span class="transaction_amount"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js"></script>
 </body>
 </html>

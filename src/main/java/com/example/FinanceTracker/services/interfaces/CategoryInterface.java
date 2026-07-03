@@ -1,7 +1,6 @@
-package services.interfaces;
+package com.example.FinanceTracker.services.interfaces;
 
-import entities.Category;
-import repositories.CategoryRepository;
+import com.example.FinanceTracker.entities.Category;
 
 import java.util.List;
 

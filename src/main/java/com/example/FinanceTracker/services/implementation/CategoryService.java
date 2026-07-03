@@ -1,10 +1,10 @@
-package services.implementation;
+package com.example.FinanceTracker.services.implementation;
 
-import entities.Category;
+import com.example.FinanceTracker.entities.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repositories.CategoryRepository;
-import services.interfaces.CategoryInterface;
+import com.example.FinanceTracker.repositories.CategoryRepository;
+import com.example.FinanceTracker.services.interfaces.CategoryInterface;
 
 import java.util.List;
 @Service

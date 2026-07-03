@@ -1,9 +1,9 @@
-package controllers;
+package com.example.FinanceTracker.controllers;
 
 
-import entities.Category;
+import com.example.FinanceTracker.entities.Category;
 import org.springframework.web.bind.annotation.*;
-import services.implementation.CategoryService;
+import com.example.FinanceTracker.services.implementation.CategoryService;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package entities;
+package com.example.FinanceTracker.entities;
 
 import jakarta.persistence.*;
 
@@ -26,7 +26,7 @@ public class Goal {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User userGoal;
+    private User user;
 
     public int getGoalId() {
         return goalId;

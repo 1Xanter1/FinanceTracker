@@ -1,8 +1,8 @@
-package controllers;
+package com.example.FinanceTracker.controllers;
 
-import entities.User;
+import com.example.FinanceTracker.entities.User;
 import org.springframework.web.bind.annotation.*;
-import services.implementation.UserService;
+import com.example.FinanceTracker.services.implementation.UserService;
 
 import java.util.List;
 
@@ -34,7 +34,7 @@ public class UserController {
     public User updateUser(@PathVariable Long id, @RequestBody User user) {
         return userService.updateUser(id, user);
     }
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
     }

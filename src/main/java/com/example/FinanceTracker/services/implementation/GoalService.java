@@ -1,10 +1,10 @@
-package services.implementation;
+package com.example.FinanceTracker.services.implementation;
 
-import entities.Goal;
+import com.example.FinanceTracker.entities.Goal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repositories.GoalRepository;
-import services.interfaces.GoalInterface;
+import com.example.FinanceTracker.repositories.GoalRepository;
+import com.example.FinanceTracker.services.interfaces.GoalInterface;
 
 import java.util.List;
 

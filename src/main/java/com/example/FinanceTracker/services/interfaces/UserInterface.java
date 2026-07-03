@@ -1,7 +1,6 @@
-package services.interfaces;
+package com.example.FinanceTracker.services.interfaces;
 
-import entities.User;
-import repositories.UserRepository;
+import com.example.FinanceTracker.entities.User;
 
 import java.util.List;
 import java.util.Optional;

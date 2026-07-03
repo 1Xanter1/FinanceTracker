@@ -1,8 +1,8 @@
-package controllers;
+package com.example.FinanceTracker.controllers;
 
-import entities.Transaction;
+import com.example.FinanceTracker.entities.Transaction;
 import org.springframework.web.bind.annotation.*;
-import services.implementation.TransactionService;
+import com.example.FinanceTracker.services.implementation.TransactionService;
 
 import java.util.List;
 

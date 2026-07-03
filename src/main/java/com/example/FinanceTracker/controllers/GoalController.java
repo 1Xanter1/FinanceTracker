@@ -1,9 +1,9 @@
-package controllers;
+package com.example.FinanceTracker.controllers;
 
 
-import entities.Goal;
+import com.example.FinanceTracker.entities.Goal;
 import org.springframework.web.bind.annotation.*;
-import repositories.GoalRepository;
+import com.example.FinanceTracker.repositories.GoalRepository;
 
 import java.util.List;
 

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header_title">
+            <h1>FINANCE TRACKER</h1>
+        </div>
+        <div class="profile">
+            <img id="profileImage" alt="profileImg">
+            <h2 class="profile_name">Dummy</h2>
+        </div>
+    </header>
+    <nav>
+        <div class="side_navigation">
+            <h1>Menu</h1>
+            <a href="dashboard.html">Home</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="categories.html">Categories</a>
+            <a href="goal.html">Goals</a>
+        </div>
+    </nav>
+    <div class="goal_main">
+        <div class="goal_menu">
+            <div class="goal_bar">
+                <h2>Savings goal</h2>
+                <button id="openGoalModal">+Add New</button>
+                <div class="goalModal" id="goalModal">
+                    <div class="modal-content">
+                        <form id="goal_form">
+
+                            <label>Name</label>
+                            <input type="text" id="goal_name">
+
+                            <label>Cost</label>
+                            <input type="number" id="goal_cost">
+
+                            <div class="modal-buttons">
+                                <button type="submit">Save</button>
+                                <button type="button" id="closeModal">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="goal_list" id="goalList">
+                <div class="goal_card">
+                    <h3>Laptop</h3>
+                    <p>700$ / 1500$</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width:47%">
+
+                        </div>
+                    </div>
+                    <span>47%</span>
+                </div>
+                <div class="goal_card">
+                    <h3>Vacation</h3>
+                    <p>300$ / 2000$</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width:15%">
+
+                        </div>
+                    </div>
+                    <span>15%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="goal.js"></script>
+</body>
+
+</html>

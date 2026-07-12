@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Categories</title>
+</head>
+
+<body>
+    <header>
+        <div class="header_title">
+            <h1>FINANCE TRACKER</h1>
+        </div>
+        <div class="profile">
+            <img id="profileImage" alt="profileImg">
+            <h2 class="profile_name">Dummy</h2>
+        </div>
+    </header>
+    <nav>
+        <div class="side_navigation">
+            <h1>Menu</h1>
+            <a href="dashboard.html">Home</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="categories.html">Categories</a>
+            <a href="goal.html">Goals</a>
+        </div>
+    </nav>
+
+    <div class="categories_main">
+        <div class="categories_menu">
+            <div class="category_bar">
+                <h2>Transactions</h2>
+                <button id="openCategoriesModal">+Add New</button>
+                <div class="categoriesModal" id="categoriesModal">
+                    <div class="modal-content">
+                        <form id="categories_form">
+
+                            <label>Name</label>
+                            <input type="text" id="Category_name">
+
+                            <label>Type</label>
+                            <div class="radio-group">
+                                <input type="radio" name="type" value="INCOME">
+                                <span>Income</span>
+
+                                <input type="radio" name="type" value="EXPENSE">
+                                <span>Expense</span>
+                            </div>
+                            <div class="modal-buttons">
+                                <button type="submit">Save</button>
+                                <button type="button" id="closeModal">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="income_category" id="incomeCategory">
+                <h3>Income:</h3>
+                <p>Salary</p>
+                <p>Freelance</p>
+            </div>
+
+            <div class="expense_category" id="ExpenseCategory">
+                <h3>Expenses:</h3>
+                <p>Food</p>
+                <p>Rent</p>
+                <p>Transport</p>
+                <p>Entertainment</p>
+            </div>
+        </div>
+    </div>
+    <script src="categories.js"></script>
+</body>
+
+</html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <title>FinanceTracker</title>
 </head>
 
@@ -17,7 +19,7 @@
         </div>
         <div class="profile">
             <img id="profileImage" alt="profileImg">
-            <h2 class = "profile_name">Dummy</h2>
+            <h2 class="profile_name">Dummy</h2>
         </div>
     </header>
     <nav>
@@ -29,7 +31,7 @@
             <a href="goal.html">Goals</a>
         </div>
     </nav>
-    
+
     <div class="main">
         <div class="bars" id="first">
             <div class="income">
@@ -50,12 +52,12 @@
                 <div class="expense_categories">
                     <h2>Expense Categories</h2>
                     <canvas id="expense_chart">
-                        
+
                     </canvas>
                 </div>
                 <div class="monthly_spending">
                     <h2>Monthly Spending</h2>
-                    <canvas id = "spending_chart">
+                    <canvas id="spending_chart">
 
                     </canvas>
                 </div>
@@ -68,8 +70,15 @@
                     <div class="line"></div>
                 </div>
                 <div class="transaction_bottom">
-                    <span class="transaction_name"></span>
-                    <span class="transaction_amount"></span>
+                    <div class="transaction_row">
+                        <span>Salary</span>
+                        <span class="income_amount">+$1200</span>
+                    </div>
+
+                    <div class="transaction_row">
+                        <span>Food</span>
+                        <span class="expense_amount">-$40</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,4 +87,5 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="dashboard.js"></script>
 </body>
+
 </html>

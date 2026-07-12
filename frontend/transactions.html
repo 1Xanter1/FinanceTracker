@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Transactions</title>
+</head>
+
+<body>
+    <header>
+        <div class="header_title">
+            <h1>FINANCE TRACKER</h1>
+        </div>
+        <div class="profile">
+            <img id="profileImage" alt="profileImg">
+            <h2 class="profile_name">Dummy</h2>
+        </div>
+    </header>
+    <nav>
+        <div class="side_navigation">
+            <h1>Menu</h1>
+            <a href="dashboard.html">Home</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="categories.html">Categories</a>
+            <a href="goal.html">Goals</a>
+        </div>
+    </nav>
+    <div class="transaction_main">
+        <div class="transactions_menu">
+            <div class="transaction_bar">
+                <h2>Transactions</h2>
+                <button id="openTransactionModal">+Add New</button>
+                <div id="transactionModal" class="modal">
+                    <div class="modal-content">
+                        <h2>Add Transaction</h2>
+
+                        <form id="transactionForm">
+
+                            <label>Amount</label>
+                            <input type="number" id="amount">
+
+                            <label>Description</label>
+                            <input type="text" id="description">
+
+                            <label>Category</label>
+                            <select id="category">
+                                <option>Food</option>
+                                <option>Salary</option>
+                                <option>Transport</option>
+                            </select>
+
+                            <label>Type</label>
+
+                            <div class="radio-group">
+                                <input type="radio" name="type" value="INCOME">
+                                <span>Income</span>
+
+                                <input type="radio" name="type" value="EXPENSE">
+                                <span>Expense</span>
+                            </div>
+
+                            <label>Date</label>
+                            <input type="date" id="date">
+
+                            <div class="modal-buttons">
+                                <button type="submit">Save</button>
+                                <button type="button" id="closeModal">Cancel</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="transaction_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>03/07/2026</td>
+                            <td>Food</td>
+                            <td>$25</td>
+                            <td>Expense</td>
+                        </tr>
+
+                        <tr>
+                            <td>02/07/2026</td>
+                            <td>Salary</td>
+                            <td>$1200</td>
+                            <td>Income</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="transactions.js"></script>
+</body>
+
+</html>

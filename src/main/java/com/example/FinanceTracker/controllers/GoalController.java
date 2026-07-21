@@ -4,10 +4,18 @@ package com.example.FinanceTracker.controllers;
 import com.example.FinanceTracker.entities.Goal;
 import com.example.FinanceTracker.services.implementation.GoalService;
 import org.springframework.web.bind.annotation.*;
-import com.example.FinanceTracker.repositories.GoalRepository;
-
+import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
-@CrossOrigin(origins = "http://127.0.0.1:5500")
+@CrossOrigin(
+        origins = "http://127.0.0.1:5500",
+        methods = {
+                RequestMethod.GET,
+                RequestMethod.POST,
+                RequestMethod.PUT,
+                RequestMethod.DELETE,
+                RequestMethod.OPTIONS
+        }
+)
 @RestController
 @RequestMapping("/goals")
 public class GoalController {
@@ -39,6 +47,13 @@ public class GoalController {
             @RequestBody Goal goal) {
 
         return goalService.updateGoal(id, goal);
+    }
+    @PutMapping("/{id}/add")
+    public Goal addMoney(
+            @PathVariable Long id,
+            @RequestParam double amount){
+
+        return goalService.addMoney(id, amount);
     }
     @GetMapping("/user/{userId}")
     public List<Goal> getGoalsByUser(@PathVariable Long userId) {

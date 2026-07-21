@@ -44,8 +44,29 @@ public class GoalService implements GoalInterface {
         return goalRepository.save(goal);
     }
     @Override
-    public List<Goal> getGoalsByUser(Long userId) {
+    public List<Goal> getGoalsByUser(Long userId){
         return goalRepository.findByUserUserId(userId);
+    }
+
+    public Goal addMoney(Long id,double amount){
+
+        Goal goal = getGoalById(id);
+
+
+        double newAmount =
+                goal.getCurrentAmount()+amount;
+
+
+        if(newAmount > goal.getTargetAmount()){
+            newAmount = goal.getTargetAmount();
+        }
+
+
+        goal.setCurrentAmount(newAmount);
+
+
+        return goalRepository.save(goal);
+
     }
     @Override
     public void deleteGoal(Long id) {

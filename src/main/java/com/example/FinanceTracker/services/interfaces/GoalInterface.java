@@ -18,4 +18,5 @@ public interface GoalInterface {
 
     List<Goal> getGoalsByUser(Long userId);
 
+    Goal addMoney(Long id,double amount);
 }

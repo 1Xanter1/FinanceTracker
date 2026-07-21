@@ -43,7 +43,10 @@ public class GoalService implements GoalInterface {
 
         return goalRepository.save(goal);
     }
-
+    @Override
+    public List<Goal> getGoalsByUser(Long userId) {
+        return goalRepository.findByUserUserId(userId);
+    }
     @Override
     public void deleteGoal(Long id) {
        goalRepository.deleteById(id);

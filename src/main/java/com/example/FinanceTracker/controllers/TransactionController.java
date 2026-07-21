@@ -36,6 +36,11 @@ public class TransactionController {
         return transactionService.updateTransaction(id, transaction);
     }
 
+    @GetMapping("/user/{userId}")
+    public List<Transaction> getTransactionsByUser(@PathVariable Long userId) {
+        return transactionService.getTransactionsByUser(userId);
+    }
+
     @DeleteMapping("/{id}")
     public void deleteTransaction(@PathVariable Long id) {
         transactionService.deleteTransaction(id);

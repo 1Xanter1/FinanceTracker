@@ -16,4 +16,6 @@ public interface GoalInterface {
 
     void deleteGoal(Long id);
 
+    List<Goal> getGoalsByUser(Long userId);
+
 }

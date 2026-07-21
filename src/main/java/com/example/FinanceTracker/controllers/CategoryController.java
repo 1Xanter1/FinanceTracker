@@ -35,6 +35,13 @@ public class CategoryController {
     public Category updateCategory(@PathVariable Long id,@RequestBody Category category) {
         return categoryService.updateCategory(id, category);
     }
+    @GetMapping("/user/{userId}")
+    public List<Category> getCategoriesByUser(
+            @PathVariable Long userId){
+
+        return categoryService.getCategoriesByUser(userId);
+
+    }
 
     @DeleteMapping("/{id}")
     public void deleteCategory(@PathVariable Long id) {

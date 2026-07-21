@@ -18,5 +18,7 @@ public interface UserInterface {
 
     Optional<User> getUserByUsername(String username);
 
+    User login(String email, String password);
+
     void deleteUser(Long id);
 }

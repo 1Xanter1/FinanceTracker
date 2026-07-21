@@ -1,5 +1,5 @@
 package com.example.FinanceTracker.entities;
-
+import java.time.LocalDate;
 import jakarta.persistence.*;
 
 @Entity
@@ -32,6 +32,8 @@ public class Transaction {
     @JoinColumn(name = "user_id")
     private User user;
 
+
+
     public Long getTransactionId() {
         return transactionId;
     }
@@ -63,4 +65,20 @@ public class Transaction {
     public void setTransactionType(TransactionType transactionType) {
         this.transactionType = transactionType;
     }
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
+

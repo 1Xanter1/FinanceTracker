@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "users")
 public class User {
@@ -26,12 +26,15 @@ public class User {
     private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Transaction> transactions;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Category> categories;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Goal> goals;
 
     public long getUserId() {

@@ -2,44 +2,51 @@ package com.example.FinanceTracker.controllers;
 
 
 import com.example.FinanceTracker.entities.Goal;
+import com.example.FinanceTracker.services.implementation.GoalService;
 import org.springframework.web.bind.annotation.*;
 import com.example.FinanceTracker.repositories.GoalRepository;
 
 import java.util.List;
 @CrossOrigin(origins = "http://127.0.0.1:5500")
-
 @RestController
 @RequestMapping("/goals")
 public class GoalController {
 
-    private final GoalRepository goalRepository;
+    private final GoalService goalService;
 
-    public GoalController(GoalRepository goalRepository) {
-        this.goalRepository = goalRepository;
+    public GoalController(GoalService goalService) {
+        this.goalService = goalService;
     }
 
     @PostMapping
     public Goal createGoal(@RequestBody Goal goal) {
-        return goalRepository.save(goal);
+        return goalService.createGoal(goal);
     }
 
     @GetMapping
     public List<Goal> getAllGoals() {
-        return goalRepository.findAll();
+        return goalService.getAllGoals();
     }
 
     @GetMapping("/{id}")
     public Goal getGoalById(@PathVariable Long id) {
-        return goalRepository.findById(id).get();
+        return goalService.getGoalById(id);
     }
 
-    @PostMapping("/{id}")
-    public Goal updateGoal(@PathVariable Long id, @RequestBody Goal goal) {
-        return goalRepository.save(goal);
+    @PutMapping("/{id}")
+    public Goal updateGoal(
+            @PathVariable Long id,
+            @RequestBody Goal goal) {
+
+        return goalService.updateGoal(id, goal);
+    }
+    @GetMapping("/user/{userId}")
+    public List<Goal> getGoalsByUser(@PathVariable Long userId) {
+        return goalService.getGoalsByUser(userId);
     }
 
     @DeleteMapping("/{id}")
     public void deleteGoal(@PathVariable Long id) {
-        goalRepository.deleteById(id);
+        goalService.deleteGoal(id);
     }
 }

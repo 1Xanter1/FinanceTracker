@@ -67,4 +67,12 @@ public class Goal {
     public void setDeadline(LocalDate deadline) {
         this.deadline = deadline;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

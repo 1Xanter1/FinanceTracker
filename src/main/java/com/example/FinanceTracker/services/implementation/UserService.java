@@ -21,7 +21,25 @@ public class UserService implements UserInterface {
 
     @Override
     public User createUser(User user) {
+        if (userRepository.findByEmail(user.getEmail()).isPresent()) {
+            throw new RuntimeException("Email already exists");
+        }
+
+        if (userRepository.findByUsername(user.getUsername()).isPresent()) {
+            throw new RuntimeException("Username already exists");
+        }
+
         return userRepository.save(user);
+    }
+    public User login(String email, String password) {
+
+        Optional<User> user = userRepository.findByEmail(email);
+
+        if (user.isPresent() && user.get().getPassword().equals(password)) {
+            return user.get();
+        }
+
+        return null;
     }
 
     @Override

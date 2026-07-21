@@ -1,6 +1,9 @@
 package com.example.FinanceTracker.controllers;
 
 import com.example.FinanceTracker.entities.User;
+import dto.LoginRequest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.example.FinanceTracker.services.implementation.UserService;
 
@@ -18,6 +21,22 @@ public class UserController {
     @PostMapping
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
+    }
+
+    @PostMapping("/register")
+    public User register(@RequestBody User user) {
+        return userService.createUser(user);
+    }
+    @PostMapping("/login")
+    public ResponseEntity<User> login(@RequestBody LoginRequest request) {
+
+        User user = userService.login(request.getEmail(), request.getPassword());
+
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+
+        return ResponseEntity.ok(user);
     }
 
     @GetMapping

@@ -14,5 +14,6 @@ public interface TransactionInterface {
     Transaction updateTransaction(Long id, Transaction transaction);
 
     void deleteTransaction(Long id);
+    List<Transaction> getTransactionsByUser(Long userId);
 
 }

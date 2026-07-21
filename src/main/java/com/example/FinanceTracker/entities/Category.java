@@ -1,5 +1,6 @@
 package com.example.FinanceTracker.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -28,6 +29,7 @@ public class Category {
     private User user;
 
     @OneToMany(mappedBy = "category")
+    @JsonIgnore
     private List<Transaction> transactions;
 
     public int getCategoryId() {
@@ -52,6 +54,22 @@ public class Category {
 
     public void setCategoryType(CategoryType categoryType) {
         this.categoryType = categoryType;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
     }
 }
 

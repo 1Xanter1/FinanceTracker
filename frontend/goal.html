@@ -17,9 +17,22 @@
         <div class="header_title">
             <h1>FINANCE TRACKER</h1>
         </div>
-        <div class="profile">
-            <img id="profileImage" alt="profileImg">
+        <div class="profile" id="profileMenu">
+
+            <img id="profileImage" alt="Profile">
+
             <h2 class="profile_name"></h2>
+
+            <span class="arrow">▼</span>
+
+            <div class="profile_dropdown" id="profileDropdown">
+
+                <a href="settings.html">⚙ Settings</a>
+
+                <button id="logoutBtn">🚪 Logout</button>
+
+            </div>
+
         </div>
     </header>
     <nav>
@@ -55,11 +68,12 @@
                 </div>
             </div>
             <div class="goal_list" id="goalList">
-                
+
             </div>
         </div>
     </div>
     <script src="goal.js"></script>
+    <script src="common.js"></script>
 </body>
 
 </html>
